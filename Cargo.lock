@@ -1085,6 +1085,7 @@ name = "schema"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "dotenvy",
  "gethostname",
  "hex",
  "sha2 0.11.1",

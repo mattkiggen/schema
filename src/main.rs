@@ -48,6 +48,10 @@ enum Command {
 
 #[tokio::main]
 async fn main() -> ExitCode {
+    // Load `.env` from the current directory (or the nearest parent) before clap reads
+    // `DATABASE_URL`. Variables already set in the environment win.
+    let _ = dotenvy::dotenv();
+
     match run(Cli::parse()).await {
         Ok(()) => ExitCode::SUCCESS,
         Err(err) => {

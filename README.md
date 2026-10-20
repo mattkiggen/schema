@@ -32,6 +32,8 @@ schema rollback 2
 schema release-locks        # clear a lock left by a crashed run
 ```
 
+`DATABASE_URL` is also read from a `.env` file in the current directory (or the nearest parent), so a project's existing `.env` works as-is. Variables already set in the shell take precedence.
+
 Flags: `--changelog <path>` (default `db/changelog`), `--lock-timeout <secs>` (default 60), `--lock-retry-ms <ms>` (default 1000).
 
 ## Library
