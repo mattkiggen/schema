@@ -1,0 +1,21 @@
+[package]
+name = "schema"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.6.7", features = ["derive", "env"] }
+gethostname = "1.1.0"
+hex = "0.4.3"
+sha2 = "0.11.1"
+sqlx = { version = "0.8", default-features = false, features = [
+  "runtime-tokio",
+  "any",
+  "postgres",
+  "sqlite",
+] }
+thiserror = "2.0.21"
+tokio = { version = "1.54.0", features = ["macros", "rt-multi-thread", "time"] }
+
+[dev-dependencies]
+tempfile = "3.27.0"
